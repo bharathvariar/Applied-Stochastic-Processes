@@ -1,5 +1,3 @@
-from turtle import color
-from xml.dom import IndexSizeErr
 import numpy as np
 from matplotlib import pyplot as plt
 from collections import Counter
@@ -16,6 +14,11 @@ def coin_flip(num_flips=100, probability=0.5):
 
 
 def longest_heads(results):
+    '''
+    Input: 1-D array of results from coin toss
+
+    Returns: Maximum consecutive occurrances of heads
+    '''
     max_heads = 0
     counter = 0
     for i in range(len(results)):
@@ -29,7 +32,14 @@ def longest_heads(results):
 
 
 def plot_results(experiment_results):
+    '''
+    Input: Takes in array of lengths of longest substring of heads in an experiment of 100 coin flips
 
+    THe function plots a bar graph of frequency of maximum length of consecutive heads, and also shoes 
+    the minimum, maximum and the mean values of the length of these substrings.
+
+    Returns: None
+    '''
     average = np.mean(experiment_results)
     max_head_chain = np.max(experiment_results)
     min_head_chain = np.min(experiment_results)
